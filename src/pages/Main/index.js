@@ -75,7 +75,7 @@ export default function Main() {
           Universities
         </Typography>
         <TabsUnstyled defaultValue={0}>
-          <TabsList sx={{ py: 6 }}>
+          <TabsList sx={{ py: 6, background: "transparent" }}>
             <Tab onClick={() => navigate("../uzbekistan")}>Uzbekistan</Tab>
             <Tab onClick={() => navigate("../turkey")}>Turkey</Tab>
             <Tab onClick={() => navigate("../kazakhstan")}>Kazakhstan</Tab>
