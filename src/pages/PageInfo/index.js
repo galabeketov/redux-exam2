@@ -53,7 +53,8 @@ export default function University() {
                 alignItems: "center",
                 justifyContent: "center",
                 background: "white",
-                py: 5,
+                my: 4,
+                py: 2,
               }}
             >
               <Pagination

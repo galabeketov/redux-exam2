@@ -95,7 +95,6 @@ export default function Header() {
             position: "absolute",
             zIndex: -10,
             background: "rgba(10,10,10,0.3)",
-            backgroundSize: "cover",
           }}
         ></Box>
         <Box
@@ -103,6 +102,7 @@ export default function Header() {
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
+            gap: 3,
           }}
         >
           <Typography
@@ -130,7 +130,7 @@ export default function Header() {
           <Fab
             variant="extended"
             color="secondary"
-            sx={{ px: 4, py: 2 }}
+            sx={{ px: 4, py: 2, fontSize: "25px" }}
             aria-label="add"
           >
             Go to see
