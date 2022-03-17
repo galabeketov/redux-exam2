@@ -19,7 +19,7 @@ export default function University() {
     console.log("error", state.university.error)
   );
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
 
   useEffect(async () => {
     const obj = await GetCategoryUniversity(params.university);
@@ -35,7 +35,7 @@ export default function University() {
         {university.success ? (
           <>
             <Grid container spacing={2}>
-              {mydata[page].map((item, index) => (
+              {mydata[page - 1].map((item, index) => (
                 <Grid
                   item
                   key={index}
@@ -61,7 +61,7 @@ export default function University() {
               }}
             >
               <Pagination
-                count={mydata.length - 1}
+                count={mydata.length}
                 variant="outlined"
                 align="center"
                 onChange={(e, p) => setPage(p)}
