@@ -1,29 +1,20 @@
 import { Container, Grid, Pagination, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import MyCard from "../../components/Card";
 import Loader from "../../components/Loader";
-import {
-  setbooksByCategory,
-  GetCategoryUniversity,
-} from "../../redux/actions/newsActions";
+import { GetCategoryUniversity } from "../../redux/actions/newsActions";
 import Main from "../Main";
 
 export default function University() {
-  const navigate = useNavigate();
   const params = useParams();
 
   const university = useSelector((state) => state.university.category);
-  const error = useSelector((state) =>
-    console.log("error", state.university.error)
-  );
-  const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
 
   useEffect(async () => {
     const obj = await GetCategoryUniversity(params.university);
-    setData(obj.data);
   }, [params.university]);
   const _ = require("lodash");
   const mydata = university.success ? _.chunk(university.data, 12) : <Loader />;

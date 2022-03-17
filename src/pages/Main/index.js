@@ -5,9 +5,7 @@ import TabsListUnstyled from "@mui/base/TabsListUnstyled";
 import { buttonUnstyledClasses } from "@mui/base/ButtonUnstyled";
 import TabUnstyled, { tabUnstyledClasses } from "@mui/base/TabUnstyled";
 import { Container, Typography } from "@mui/material";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { setbooksByCategory } from "../../redux/actions/newsActions";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Tab = styled(TabUnstyled)`
   font-family: IBM Plex Sans, sans-serif;
@@ -61,9 +59,8 @@ const TabsList = styled(TabsListUnstyled)`
 export default function Main() {
   const navigate = useNavigate();
   const location = useLocation();
-  const data = useSelector((state) => state.university.university);
   React.useEffect(() => {
-    if (location.pathname == "/") navigate("/uzbekistan");
+    if (location.pathname === "/") navigate("/uzbekistan");
   }, []);
 
   console.log("location", location.pathname);
