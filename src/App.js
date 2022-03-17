@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Box } from "@mui/material";
+import store from "./redux/store";
+import { Provider } from "react-redux";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Main from "./pages/Main";
+import University from "./pages/PageInfo";
 
-function App() {
+const outerTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#fff",
+    },
+    blue: {
+      main: "#14668C",
+    },
+    secondary: {
+      main: "#067DC0",
+    },
+  },
+});
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <ThemeProvider theme={outerTheme}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/:university" element={<University />} />
+          </Routes>
+          <Footer />
+        </ThemeProvider>
+      </BrowserRouter>
+    </Provider>
   );
-}
+};
 
 export default App;
