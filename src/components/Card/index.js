@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import { Fab, Link } from "@mui/material";
 
 export default function MyCard({ data }) {
-  console.log(data);
   return (
     <Card
       sx={{
@@ -76,7 +75,7 @@ export default function MyCard({ data }) {
           <Fab
             variant="extended"
             color="secondary"
-            sx={{ fontSize: "22px", boxShadow: "none" }}
+            sx={{ fontSize: "22px" }}
             aria-label="add"
           >
             Go to website
@@ -85,7 +84,7 @@ export default function MyCard({ data }) {
         <Fab
           variant="extended"
           color="secondary"
-          sx={{ fontSize: "22px", boxShadow: "none" }}
+          sx={{ fontSize: "22px" }}
           aria-label="add"
         >
           {data.alpha_two_code}

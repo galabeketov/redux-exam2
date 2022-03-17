@@ -15,6 +15,9 @@ export default function University() {
   const params = useParams();
 
   const university = useSelector((state) => state.university.category);
+  const error = useSelector((state) =>
+    console.log("error", state.university.error)
+  );
   const [data, setData] = useState([]);
   const [page, setPage] = useState(0);
 

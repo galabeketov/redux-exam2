@@ -60,15 +60,14 @@ const TabsList = styled(TabsListUnstyled)`
 
 export default function Main() {
   const navigate = useNavigate();
+  const location = useLocation();
   const data = useSelector((state) => state.university.university);
   React.useEffect(() => {
     setbooksByCategory();
+    if (location.pathname == "/") navigate("/uzbekistan");
   }, []);
 
-  const changeCategory = (categoryName) => {
-    // setCategory(categoryName);
-    navigate(`/category/${categoryName}`);
-  };
+  console.log("location", location.pathname);
 
   return (
     <>
