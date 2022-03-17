@@ -6,7 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
-import { Fab } from "@mui/material";
+import { Container, Fab } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -53,29 +53,31 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Header() {
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar sx={{ px: 4 }}>
-          <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
-              <Box component={"img"} src={"logo.png"} width="180px" />
-            </Typography>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
-          </Toolbar>
-        </AppBar>
-      </Box>
+      <Container>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar sx={{ px: 4 }}>
+            <Toolbar>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              >
+                <Box component={"img"} src={"logo.png"} width="180px" />
+              </Typography>
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ "aria-label": "search" }}
+                />
+              </Search>
+            </Toolbar>
+          </AppBar>
+        </Box>
+      </Container>
       <Box
         sx={{
           flexGrow: 1,
@@ -97,45 +99,48 @@ export default function Header() {
             background: "rgba(10,10,10,0.3)",
           }}
         ></Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            gap: 3,
-          }}
-        >
-          <Typography
-            variant="h1"
-            color={"whitesmoke"}
+        <Container maxWidth="xl">
+          <Box
             sx={{
-              textShadow: "0px 0 10px black",
-              fontSize: "100px",
-              textAlign: "left",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: 3,
             }}
           >
-            Top books{" "}
-          </Typography>
-          <Typography
-            variant="h1"
-            color={"whitesmoke"}
-            sx={{
-              textShadow: "0px 0 10px black",
-              fontSize: "40px",
-              textAlign: "left",
-            }}
-          >
-            What are the most popular Universities in the world?
-          </Typography>
-          <Fab
-            variant="extended"
-            color="secondary"
-            sx={{ px: 4, py: 2, fontSize: "25px" }}
-            aria-label="add"
-          >
-            Go to see
-          </Fab>
-        </Box>
+            <Typography
+              variant="h1"
+              color={"whitesmoke"}
+              sx={{
+                textShadow: "0px 0 10px black",
+                fontSize: "100px",
+                textAlign: "left",
+                fontWeight: "800",
+              }}
+            >
+              Top University
+            </Typography>
+            <Typography
+              variant="h1"
+              color={"whitesmoke"}
+              sx={{
+                textShadow: "0px 0 10px black",
+                fontSize: "40px",
+                textAlign: "left",
+              }}
+            >
+              What are the most popular Universities in the world?
+            </Typography>
+            <Fab
+              variant="extended"
+              color="secondary"
+              sx={{ px: 4, py: 2, fontSize: "25px" }}
+              aria-label="add"
+            >
+              Go to see
+            </Fab>
+          </Box>
+        </Container>
       </Box>
     </>
   );

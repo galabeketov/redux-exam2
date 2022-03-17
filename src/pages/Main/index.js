@@ -63,7 +63,6 @@ export default function Main() {
   const location = useLocation();
   const data = useSelector((state) => state.university.university);
   React.useEffect(() => {
-    setbooksByCategory();
     if (location.pathname == "/") navigate("/uzbekistan");
   }, []);
 
