@@ -71,7 +71,11 @@ export default function Main() {
   return (
     <>
       <Container sx={{ pt: 10 }}>
-        <Typography variant="h3" sx={{ py: 3 }} align="center">
+        <Typography
+          variant="h3"
+          sx={{ py: 3, fontWeight: "700", fontSize: "70px" }}
+          align="center"
+        >
           Universities
         </Typography>
         <TabsUnstyled defaultValue={0}>

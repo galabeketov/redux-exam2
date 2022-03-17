@@ -113,7 +113,7 @@ export default function Header() {
               color={"whitesmoke"}
               sx={{
                 textShadow: "0px 0 10px black",
-                fontSize: "100px",
+                fontSize: "170px",
                 textAlign: "left",
                 fontWeight: "800",
               }}
@@ -127,6 +127,7 @@ export default function Header() {
                 textShadow: "0px 0 10px black",
                 fontSize: "40px",
                 textAlign: "left",
+                fontWeight: "700",
               }}
             >
               What are the most popular Universities in the world?
@@ -134,7 +135,13 @@ export default function Header() {
             <Fab
               variant="extended"
               color="secondary"
-              sx={{ px: 4, py: 2, fontSize: "25px" }}
+              sx={{
+                px: 7,
+                py: 4.5,
+                fontSize: "25px",
+                background: "#001C3D",
+                borderRadius: "36px",
+              }}
               aria-label="add"
             >
               Go to see
