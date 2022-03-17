@@ -12,8 +12,8 @@ export default function MyCard({ data }) {
     <Card
       sx={{
         width: "100%",
-        px: 1,
-        py: 2,
+        px: 2,
+        py: 4,
         flex: 1,
         display: "flex",
         flexDirection: "column",
